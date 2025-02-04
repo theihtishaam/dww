@@ -1,0 +1,26 @@
+<!-- templates/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - Ultra Advanced AI Assistant</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Dashboard</h1>
+    <h2>Projects</h2>
+    <ul>
+      {% for project in projects %}
+        <li>
+          <strong>ID:</strong> {{ project.id }} | <strong>Prompt:</strong> {{ project.prompt }} |
+          <a href="/download/{{ project.id }}">Download</a> | <a href="/preview/{{ project.id }}">Preview</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <h2>Feedback</h2>
+    <p>Auto‑learning feedback and retraining can be triggered from here (future work).</p>
+  </div>
+</body>
+</html>

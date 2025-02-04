@@ -1,0 +1,42 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ultra Advanced AI Assistant</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Ultra Advanced AI Assistant</h1>
+    <form id="genForm" method="POST" enctype="multipart/form-data">
+      <label for="prompt">Enter your detailed project prompt:</label>
+      <textarea id="prompt" name="prompt" placeholder="e.g., Build a full-featured social networking mobile app with live video streaming, interactive 3D graphics preview, and robust security..." required rows="4"></textarea>
+      <label for="project_type">Select Project Type:</label>
+      <select id="project_type" name="project_type">
+        <option value="web">Web Application</option>
+        <option value="mobile">Mobile Application</option>
+        <option value="python">Python Application</option>
+        <option value="game">Game</option>
+        <option value="multi">Multi-Language / Custom</option>
+      </select>
+      <label for="language">Primary Language (if applicable):</label>
+      <select id="language" name="language">
+        <option value="python">Python</option>
+        <option value="javascript">JavaScript</option>
+        <option value="java">Java</option>
+      </select>
+      <!-- Optional: Attachment upload (e.g., Figma file, ZIP, image) -->
+      <label for="attachment">Attachment (optional):</label>
+      <input type="file" id="attachment" name="attachment">
+      <input type="submit" value="Generate Project">
+    </form>
+    <div id="result" style="margin-top:20px; white-space: pre-wrap;"></div>
+    <p style="text-align:center; margin-top:20px;">
+      After generation, go to <a href="/chat">Chat</a>, view the <a href="/dashboard">Dashboard</a>, or <a href="/preview/{{ session.get('project_id') }}">Preview</a>.
+    </p>
+  </div>
+  <script src="/static/js/script.js"></script>
+</body>
+</html>

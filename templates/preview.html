@@ -1,0 +1,21 @@
+<!-- templates/preview.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Preview</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <script src="/static/js/interactive_preview.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Project Live Preview</h1>
+    <!-- The iframe displays the live preview; interactive preview tool is enabled -->
+    <iframe id="previewFrame" src="{{ preview_url }}" style="width:100%; height:600px; border: none;"></iframe>
+    <p style="text-align:center; margin-top:20px;">
+      <a href="/download/{{ session.get('project_id') }}">Download Project</a>
+    </p>
+  </div>
+</body>
+</html>
